@@ -1,4 +1,4 @@
-fn are_all_increasing(report: &Vec<i32>) -> bool {
+pub fn are_all_increasing(report: &Vec<i32>) -> bool {
     let mut last_level: &i32 = report.get(0).unwrap();
     for level in report {
         if last_level.le(level){
@@ -10,7 +10,7 @@ fn are_all_increasing(report: &Vec<i32>) -> bool {
     true
 }
 
-fn are_all_decreasing(report: &Vec<i32>) -> bool {
+pub fn are_all_decreasing(report: &Vec<i32>) -> bool {
     let mut last_level: &i32 = report.get(0).unwrap();
     for level in report {
         if last_level.ge(level){
@@ -22,7 +22,7 @@ fn are_all_decreasing(report: &Vec<i32>) -> bool {
     true
 }
 
-fn are_all_changing_in_defined_range(report: &Vec<i32>, lower_bound: i32, upper_bound:i32) -> bool {
+pub fn are_all_changing_in_defined_range(report: &Vec<i32>, lower_bound: i32, upper_bound:i32) -> bool {
     let mut last_level: &i32 = report.get(0).unwrap();
     let report_copy_without_first_element = &report[1..];
     for level in report_copy_without_first_element {

@@ -1,42 +1,4 @@
-fn are_all_increasing(report: &Vec<i32>) -> bool {
-    let mut last_level: &i32 = report.get(0).unwrap();
-    for level in report {
-        if last_level.le(level){
-            last_level = level;
-        } else {
-            return false;
-        }
-    }
-    true
-}
-
-fn are_all_decreasing(report: &Vec<i32>) -> bool {
-    let mut last_level: &i32 = report.get(0).unwrap();
-    for level in report {
-        if last_level.ge(level){
-            last_level = level;
-        } else {
-            return false;
-        }
-    }
-    true
-}
-
-fn are_all_changing_in_defined_range(report: &Vec<i32>, lower_bound: i32, upper_bound:i32) -> bool {
-    let mut last_level: &i32 = report.get(0).unwrap();
-    let report_copy_without_first_element = &report[1..];
-    for level in report_copy_without_first_element {
-        let abs_diff = last_level.abs_diff(level.abs()) as i32;
-        if abs_diff.gt(&upper_bound) {
-            return false;
-        }
-        if abs_diff.lt(&lower_bound) {
-            return false;
-        }
-        last_level = level;
-    }
-    true
-}
+use crate::days::day2::part1::{are_all_increasing, are_all_decreasing, are_all_changing_in_defined_range};
 
 fn retry_report_safety_check(report: &Vec<i32>) -> bool {
     let num_levels = report.len();
