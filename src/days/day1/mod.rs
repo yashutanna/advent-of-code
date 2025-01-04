@@ -1,5 +1,5 @@
-pub mod part1;
-pub mod part2;
+mod part1;
+mod part2;
 use std::fs;
 
 fn read_file(input_file: &str) -> Vec<Vec<i32>> {
