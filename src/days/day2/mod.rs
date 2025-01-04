@@ -1,4 +1,6 @@
-pub mod part1;
+mod part1;
+mod part2;
+
 use std::fs;
 
 fn read_file(input_file: &str) -> Vec<Vec<i32>> {
@@ -22,6 +24,7 @@ fn read_file(input_file: &str) -> Vec<Vec<i32>> {
 pub(crate) fn run_part(part: &str, input_file: &String) {
     match part {
         "1" => part1::run(read_file(input_file)),
+        "2" => part2::run(read_file(input_file)),
         _ => println!("Invalid part provided")
     }
 }
