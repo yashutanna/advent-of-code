@@ -9,6 +9,7 @@ pub(crate) fn run_challenge_for_day(day: &str, input_file: &String) {
     match day_part.get(0).unwrap().as_str() {
         "1" => days::day1::run_part(day_part.get(1).unwrap().as_str(), input_file),
         "2" => days::day2::run_part(day_part.get(1).unwrap().as_str(), input_file),
+        "3" => days::day3::run_part(day_part.get(1).unwrap().as_str(), input_file),
         _ => println!("Invalid day provided")
     }
 }
