@@ -7,10 +7,6 @@ fn handle_inputs(puzzle: Vec<Vec<char>>) -> u32 {
         for j in 1..puzzle.get_length() {
             let character: char = puzzle.get_cell(i, j).unwrap().to_ascii_lowercase();
             if character == 'x' {
-                // if {
-                //     println!("found xmas at coordinates {} {}, with first letter {}", i-1 , j-1, character);
-                //     total_words += 1;
-                // }
                 total_words += puzzle.find_from(i, j, "xmas", None);
             }
         }
